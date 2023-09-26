@@ -1,0 +1,46 @@
+﻿@model List<ETrade.Ent.Orders>
+
+<a href="/orders/New"></a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                OrderDate
+            </th>
+            <th>
+                
+            </th>
+            <th>
+                <a href="/orders/New">New Order</a>
+            </th>
+
+           
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.OrderId
+                    </td>
+                    <td>
+                       @item.CreatedDate
+                    </td>
+                    <td>
+                        <a href="/Orders/Update/@item.OrderId">Update</a>
+                    </td>
+                    <td>
+                        <a href="/Orders/Cancel/@item.OrderId">Cancel</a>
+                    </td>
+
+                    
+                </tr>
+            }
+    </tbody>
+</table>
+

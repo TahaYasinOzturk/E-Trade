@@ -1,0 +1,34 @@
+﻿@model ETrade.UI.Models.ViewModel.AdminModel
+
+@{
+    ViewData["Title"] = "Crud";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4>@Model.Head</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Crud">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SelectedFood.FoodName" class="control-label"></label>
+                <input asp-for="SelectedFood.FoodName" class="form-control" />
+                <span asp-validation-for="SelectedFood.FoodName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedFood.CategoryId" class="control-label"></label>
+                <input asp-for="SelectedFood.CategoryId" class="form-control" />
+                <span asp-validation-for="SelectedFood.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Model.Text" class="@Model.Class" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
