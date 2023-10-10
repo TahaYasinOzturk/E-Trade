@@ -24,12 +24,12 @@ namespace ETrade.UI.Controllers
             //u = SessionHelper.GetObjectFromJson<Users>(HttpContext.Session, "user"); yazdık geldik
 
             ////Session.SessionHelper.LoginUser = SessionHelper.GetObjectFromJson<Users>(HttpContext.Session, "user");
-            Session.SessionHelper.LoginUser = user;
-            //Session.SessionHelper.LoginUser.isAdmin == true aynı şey alttaki ile
-            if (Session.SessionHelper.LoginUser.isAdmin)
-            {
-                return View("Admin", "Admin");
-            }
+            //Session.SessionHelper.LoginUser = user;
+            ////Session.SessionHelper.LoginUser.isAdmin == true aynı şey alttaki ile
+            //if (Session.SessionHelper.LoginUser.isAdmin)
+            //{
+            //    return View("Admin", "Admin");
+            //}
            return View();
         }
 

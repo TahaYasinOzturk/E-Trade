@@ -16,21 +16,29 @@ namespace ETrade.Rep.Concretes
     {
         public UserRepository(Context context) : base(context)
         {
+
         }
 
         public Users Login(Users user)
         {
+            var dummyUser = new Users();
             try
             {
-                var loginUser = Find(user.UserId);
 
-                return loginUser;
+                var loginUser = Set().FirstOrDefault(x => x.UserName == user.UserName);
+                if (loginUser != null)
+                {
+                    bool verified = BCrypt.Net.BCrypt.Verify(user.Password, loginUser.Password);
+                    if (verified)
+                    {
+                        return loginUser;
+                    }
+                }
+                return dummyUser;
             }
             catch (Exception)
             {
-                //null da yapabilridik ama null kullamadık bazen null exception yiyoz.
-                var u = new Users();
-                return u;
+                return dummyUser;
             }
         }
 

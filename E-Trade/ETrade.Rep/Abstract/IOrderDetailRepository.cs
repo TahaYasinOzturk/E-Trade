@@ -10,5 +10,6 @@ namespace ETrade.Rep.Abstract
 {
     public interface IOrderDetailRepository : IBaseRepository<OrderDetails>
     {
+        List<OrderDetails> GetOrderDetails(Guid Id);
     }
 }

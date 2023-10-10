@@ -30,6 +30,8 @@ builder.Services.AddScoped<AdminModel>();
 builder.Services.AddScoped<CategoriesModel>();
 builder.Services.AddScoped<PropertiesModel>();
 builder.Services.AddScoped<Users>();
+builder.Services.AddScoped<Orders>();
+builder.Services.AddScoped<OrderDetails>();
 
 
 
